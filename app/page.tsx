@@ -1,103 +1,204 @@
+import Navigation from "./components/Navigation";
+import Menu from "./components/Menu";
 import Image from "next/image";
+import About from "./components/About";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen">
+      <Navigation />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      {/* Home Section */}
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+          <div className="relative w-48 h-48 mx-auto mb-8">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/Flux_Dev_Design_a_modern_clean_and_creative_logo_for_a_company_1.jpeg"
+              alt="HarJas Logo"
+              fill
+              className="object-contain"
+              priority
             />
-            Deploy now
-          </a>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            HarJas Resto
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-8">
+            Delicious home-cooked Punjabi meals delivered daily
+          </p>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#menu"
+            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition-colors"
           >
-            Read our docs
+            View Menu
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Menu Section */}
+      <section id="menu" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            Our Menu
+          </h2>
+          <Menu />
+        </div>
+        <p className="text-center text-gray-700 italic mt-12 text-lg">
+          Give us a call to discover delightful surprise add-ons—absolutely free
+          for a limited time!. We're also happy to personalize your tiffin just
+          the way you like it.
+        </p>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="pt-20 bg-[#FFFBF5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                About HarJas
+              </h2>
+              <p className="text-lg text-gray-600">
+                HarJas is a local tiffin service providing healthy, home-cooked
+                Punjabi meals daily. We use fresh ingredients and deliver with
+                love — just like home.
+              </p>
+            </div>
+            <div className="relative h-64 md:h-96">
+              <Image
+                src="/Flux_Dev_Design_a_modern_clean_and_creative_logo_for_a_company_1.jpeg"
+                alt="About HarJas"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <About />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            Contact Us
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="text-2xl">📞</span> Phone
+                </h3>
+                <a
+                  href="tel:+14034949001"
+                  className="text-gray-600 hover:text-orange-600 flex items-center gap-2"
+                >
+                  +1 (403)-494-9001
+                </a>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="text-2xl">✉️</span> Email
+                </h3>
+                <a
+                  href="mailto:harjasresto@gmail.com"
+                  className="text-gray-600 hover:text-orange-600 flex items-center gap-2"
+                >
+                  harjasresto@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="text-2xl">📱</span> Social Media
+                </h3>
+                <div className="space-y-2">
+                  <a
+                    href="https://instagram.com/harjas.resto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-600 hover:text-orange-600 flex items-center gap-2"
+                  >
+                    Instagram: @harjas.resto
+                  </a>
+                  <a
+                    href="https://tiktok.com/@harjas.resto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-600 hover:text-orange-600 flex items-center gap-2"
+                  >
+                    TikTok: @harjas.resto
+                  </a>
+                  <a
+                    href="https://wa.me/14034949001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-600 flex items-center gap-2"
+                  >
+                    Chat with us on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">HarJas</h3>
+              <p className="text-gray-400">
+                Delicious home-cooked Punjabi meals delivered daily.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#home" className="text-gray-400 hover:text-white">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#menu" className="text-gray-400 hover:text-white">
+                    Menu
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="text-gray-400 hover:text-white">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="text-gray-400 hover:text-white">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Contact</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>Phone: +1 (403)-494-9001</li>
+                <li>Email: harjasresto@gmail.com</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>
+              &copy; {new Date().getFullYear()} HarJas Tiffin Service. All
+              rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
