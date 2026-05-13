@@ -48,7 +48,7 @@ export default function Home() {
         </div>
         <p className="text-center text-gray-700 italic mt-12 text-lg">
           Give us a call to discover delightful surprise add-ons—absolutely free
-          for a limited time!. We're also happy to personalize your tiffin just
+          for a limited time!. We&apos;re also happy to personalize your tiffin just
           the way you like it.
         </p>
       </section>
